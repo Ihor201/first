@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Собко Ігор, група 301-ТН">
+<meta name="description" content="Лабораторна робота №4. Завдання 4.2. Вертикальні рядки, що біжать">
+<title>Вертикальні рядки, що біжать</title>
+<style>
+  th { font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; color: #cfd8dc; vertical-align: top; }
+  td { vertical-align: top; }
+  marquee { display: block; text-align: center; }
+  img { margin: 4px 0; }
+</style>
+</head>
+
+<body bgcolor="#263238" text="#ffffff">
+
+<h2 align="center">Завдання 4.2. Вертикальні рядки, що біжать</h2>
+
+<table width="100%" cellspacing="10" cellpadding="0">
+<tr>
+  <th width="20%">1. Текст і рисунки коливаються</th>
+  <th width="20%">2. Рисунки пробігають знизу вгору</th>
+  <th width="20%">3. Рисунки пробігають згори вниз і зупиняються</th>
+  <th width="20%">4. Швидкий рядок<br>(scrolldelay = 60)</th>
+  <th width="20%">5. Повільний рядок<br>(scrolldelay = 250)</th>
+</tr>
+<tr>
+
+  <!-- 1 -->
+  <td>
+    <marquee width="100%" height="260" bgcolor="#fff59d" behavior="alternate" direction="up" scrollamount="3"
+             style="color:#4e342e; font-family:Georgia, serif; font-size:20px; font-weight:bold;">
+      Вивчаємо<br>
+      <img src="image/html.png" width="80" height="80" alt="HTML"><br>
+      та<br>
+      <img src="image/css.png" width="80" height="80" alt="CSS"><br>
+      разом!
+    </marquee>
+  </td>
+
+  <!-- 2 -->
+  <td>
+    <marquee width="100%" height="260" bgcolor="#b3e5fc" behavior="scroll" direction="up" loop="-1" scrollamount="4">
+      <img src="image/html.png" width="80" height="80" alt="HTML"><br>
+      <img src="image/css.png" width="80" height="80" alt="CSS"><br>
+      <img src="image/js.png" width="80" height="80" alt="JS"><br>
+      <img src="image/php.png" width="80" height="80" alt="PHP"><br>
+      <img src="image/sql.png" width="80" height="80" alt="SQL">
+    </marquee>
+  </td>
+
+  <!-- 3 -->
+  <td>
+    <marquee width="100%" height="260" bgcolor="#c8e6c9" behavior="slide" direction="down" loop="1" scrollamount="4">
+      <img src="image/sql.png" width="80" height="80" alt="SQL"><br>
+      <img src="image/php.png" width="80" height="80" alt="PHP"><br>
+      <img src="image/js.png" width="80" height="80" alt="JS"><br>
+      <img src="image/css.png" width="80" height="80" alt="CSS"><br>
+      <img src="image/html.png" width="80" height="80" alt="HTML">
+    </marquee>
+  </td>
+
+  <!-- 4 -->
+  <td>
+    <marquee width="100%" height="260" bgcolor="#ffccbc" behavior="scroll" direction="up" scrolldelay="60" scrollamount="4"
+             style="color:#bf360c; font-family:Verdana, sans-serif; font-size:18px; font-weight:bold;">
+      Мова HTML описує структуру веб-сторінки<br><br>
+      Теги задають вигляд та поведінку елементів
+    </marquee>
+  </td>
+
+  <!-- 5 -->
+  <td>
+    <marquee width="100%" height="260" bgcolor="#d1c4e9" behavior="scroll" direction="up" scrolldelay="250" scrollamount="4"
+             style="color:#311b92; font-family:'Trebuchet MS', sans-serif; font-size:18px; font-style:italic;">
+      Мова CSS відповідає за оформлення сайту<br><br>
+      Кольори, шрифти й відступи задаються стилями
+    </marquee>
+  </td>
+
+</tr>
+</table>
+
+<p align="center" style="margin-top:30px; font-family:Arial, sans-serif; font-size:13px; color:#b0bec5;">
+Виконав: Собко Ігор, група 301-ТН, <a href="mailto:grsobko@gmail.com" style="color:#fff59d;">grsobko@gmail.com</a>
+</p>
+
+</body>
+</html>
