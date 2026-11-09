@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаб. 10 — Головна</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h1 { color: #1565c0; margin-bottom: 10px; text-align: center; }
+    p  { color: #555; margin-bottom: 30px; font-size: 0.95em; }
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 28px 32px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: white;
+      font-size: 1em;
+      font-weight: bold;
+      width: 180px;
+      transition: transform 0.15s;
+    }
+    .card:hover { transform: translateY(-3px); }
+    .card.float  { background: #1565c0; }
+    .card.flex   { background: #2e7d32; }
+    .card.grid   { background: #00838f; }
+    .card span   { display: block; font-size: 0.75em; font-weight: normal; margin-top: 6px; opacity: 0.85; }
+    footer {
+      margin-top: 40px;
+      font-size: 0.8em;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <h1>Лабораторна робота №10</h1>
+  <p>Адаптивна розмітка HTML-сторінок з використанням CSS</p>
+
+  <div class="cards">
+    <a class="card float" href="/float">
+      FLOAT
+      <span>Завдання 1</span>
+    </a>
+    <a class="card flex" href="/flex">
+      FLEXBOX
+      <span>Завдання 2</span>
+    </a>
+    <a class="card grid" href="/grid">
+      CSS GRID
+      <span>Завдання 3</span>
+    </a>
+  </div>
+
+  <footer>Собко Ігор Олександрович, гр. 301-ТН &copy; 2026</footer>
+</body>
+</html>

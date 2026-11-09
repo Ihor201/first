@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаб. 10 — Завдання 3 (grid)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ===== < 500px: один стовпець (за замовчуванням) ===== */
+    #wrapper {
+      min-height: 100vh;
+      display: grid;
+      gap: 3px;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+    }
+
+    header, nav, main, aside, footer {
+      padding: 12px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    header  { grid-area: header; background-color: #1565c0; color: #fff; min-height: 70px; }
+    nav     { grid-area: nav;    background-color: #2e7d32; color: #fff; }
+    main    { grid-area: main;   background-color: #00838f; color: #fff; }
+    aside   { grid-area: aside;  background-color: #e65100; color: #fff; }
+    footer  { grid-area: footer; background-color: #1565c0; color: #fff; min-height: 60px; }
+
+    h2 { font-size: 1em; margin-bottom: 6px; }
+    p  { font-size: 0.85em; line-height: 1.5; }
+
+    .breakpoint-label {
+      position: fixed;
+      bottom: 8px;
+      right: 10px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    /* ===== >= 500px: nav + main в рядок, aside і footer окремо ===== */
+    @media (min-width: 500px) {
+      #wrapper {
+        grid-template-columns: 30fr 70fr;
+        grid-template-rows: auto 1fr auto auto;
+        grid-template-areas:
+          "header header"
+          "nav    main"
+          "aside  aside"
+          "footer footer";
+      }
+    }
+
+    /* ===== >= 750px: три рівних стовпці ===== */
+    @media (min-width: 750px) {
+      #wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+          "header header header"
+          "nav    main   aside"
+          "footer footer footer";
+      }
+    }
+
+    /* ===== >= 950px: nav 18%, main grows, aside 20% ===== */
+    @media (min-width: 950px) {
+      #wrapper {
+        grid-template-columns: 18fr 62fr 20fr;
+        grid-template-rows: 70px 1fr 60px;
+        min-height: 100vh;
+      }
+    }
+
+    /* ===== >= 1200px: фіксована ширина ===== */
+    @media (min-width: 1200px) {
+      #wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        grid-template-columns: 15fr 67fr 18fr;
+      }
+    }
+
+    .bp { display: none; }
+    @media (max-width: 499px)                        { .bp.bp0 { display: block; } }
+    @media (min-width: 500px) and (max-width: 749px) { .bp.bp1 { display: block; } }
+    @media (min-width: 750px) and (max-width: 949px) { .bp.bp2 { display: block; } }
+    @media (min-width: 950px) and (max-width: 1199px){ .bp.bp3 { display: block; } }
+    @media (min-width: 1200px)                       { .bp.bp4 { display: block; } }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+
+    <header>
+      <h2>HEADER — Шапка сайту</h2>
+      <p>Лаб. робота №10 — Завдання 3: Адаптивний макет (технологія CSS GRID)</p>
+    </header>
+
+    <nav>
+      <h2>NAV — Навігація</h2>
+      <p>Головна</p>
+      <p>Про нас</p>
+      <p>Послуги</p>
+      <p>Портфоліо</p>
+      <p>Контакти</p>
+    </nav>
+
+    <main>
+      <h2>MAIN — Основний вміст</h2>
+      <p>Це головний блок сторінки. Тут розміщується основний текст або контент.</p>
+      <p>Макет побудований за допомогою технології <strong>CSS Grid Layout</strong>.</p>
+      <p>При зміні ширини вікна браузера блоки перебудовуються завдяки @media правилам.</p>
+    </main>
+
+    <aside>
+      <h2>ASIDE — Бічна панель</h2>
+      <p>Додатковий контент, реклама або посилання.</p>
+    </aside>
+
+    <footer>
+      <h2>FOOTER — Підвал</h2>
+      <p>Собко І.О., гр. 301-ТН &copy; 2026</p>
+    </footer>
+
+  </div>
+
+  <div class="breakpoint-label">
+    <span class="bp bp0">&lt; 500px — 1 колонка</span>
+    <span class="bp bp1">≥ 500px — 2 колонки</span>
+    <span class="bp bp2">≥ 750px — 3 рівні колонки</span>
+    <span class="bp bp3">≥ 950px — nav | main | aside</span>
+    <span class="bp bp4">≥ 1200px — фіксована ширина</span>
+  </div>
+</body>
+</html>

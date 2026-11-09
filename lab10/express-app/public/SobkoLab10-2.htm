@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаб. 10 — Завдання 2 (flexbox)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    #wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    header, nav, main, aside, footer {
+      padding: 12px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    header {
+      background-color: #1565c0;
+      color: #fff;
+      min-height: 70px;
+    }
+
+    nav {
+      background-color: #2e7d32;
+      color: #fff;
+    }
+
+    main {
+      background-color: #00838f;
+      color: #fff;
+      flex: 1;
+    }
+
+    aside {
+      background-color: #e65100;
+      color: #fff;
+    }
+
+    footer {
+      background-color: #1565c0;
+      color: #fff;
+      min-height: 60px;
+    }
+
+    h2 { font-size: 1em; margin-bottom: 6px; }
+    p  { font-size: 0.85em; line-height: 1.5; }
+
+    .breakpoint-label {
+      position: fixed;
+      bottom: 8px;
+      right: 10px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    /* ===== < 500px: вертикальний flex (за замовчуванням) ===== */
+
+    /* ===== >= 500px: nav + main в рядок, aside окремо знизу ===== */
+    @media (min-width: 500px) {
+      #wrapper {
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: flex-start;
+      }
+      header  { flex: 0 0 100%; }
+      nav     { flex: 0 0 calc(30% - 1.5px); }
+      main    { flex: 0 0 calc(70% - 1.5px); }
+      aside   { flex: 0 0 100%; }
+      footer  { flex: 0 0 100%; }
+    }
+
+    /* ===== >= 750px: три рівних стовпці ===== */
+    @media (min-width: 750px) {
+      nav   { flex: 0 0 calc(33.33% - 2px); }
+      main  { flex: 0 0 calc(33.34% - 2px); }
+      aside { flex: 0 0 calc(33.33% - 2px); }
+    }
+
+    /* ===== >= 950px: nav 18%, main grows, aside 20% ===== */
+    @media (min-width: 950px) {
+      nav   { flex: 0 0 calc(18% - 2px); }
+      main  { flex: 1 1 calc(62% - 2px); }
+      aside { flex: 0 0 calc(20% - 2px); }
+    }
+
+    /* ===== >= 1200px: фіксована ширина ===== */
+    @media (min-width: 1200px) {
+      #wrapper { max-width: 1400px; margin: 0 auto; }
+      nav   { flex: 0 0 calc(15% - 2px); }
+      main  { flex: 1 1 calc(67% - 2px); }
+      aside { flex: 0 0 calc(18% - 2px); }
+    }
+
+    .bp { display: none; }
+    @media (max-width: 499px)                        { .bp.bp0 { display: block; } }
+    @media (min-width: 500px) and (max-width: 749px) { .bp.bp1 { display: block; } }
+    @media (min-width: 750px) and (max-width: 949px) { .bp.bp2 { display: block; } }
+    @media (min-width: 950px) and (max-width: 1199px){ .bp.bp3 { display: block; } }
+    @media (min-width: 1200px)                       { .bp.bp4 { display: block; } }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+
+    <header>
+      <h2>HEADER — Шапка сайту</h2>
+      <p>Лаб. робота №10 — Завдання 2: Адаптивний макет (технологія FLEXBOX)</p>
+    </header>
+
+    <nav>
+      <h2>NAV — Навігація</h2>
+      <p>Головна</p>
+      <p>Про нас</p>
+      <p>Послуги</p>
+      <p>Портфоліо</p>
+      <p>Контакти</p>
+    </nav>
+
+    <main>
+      <h2>MAIN — Основний вміст</h2>
+      <p>Це головний блок сторінки. Тут розміщується основний текст або контент.</p>
+      <p>Макет побудований за допомогою технології <strong>flexbox</strong>.</p>
+      <p>При зміні ширини вікна браузера блоки перебудовуються завдяки @media правилам.</p>
+    </main>
+
+    <aside>
+      <h2>ASIDE — Бічна панель</h2>
+      <p>Додатковий контент, реклама або посилання.</p>
+    </aside>
+
+    <footer>
+      <h2>FOOTER — Підвал</h2>
+      <p>Собко І.О., гр. 301-ТН &copy; 2026</p>
+    </footer>
+
+  </div>
+
+  <div class="breakpoint-label">
+    <span class="bp bp0">&lt; 500px — 1 колонка</span>
+    <span class="bp bp1">≥ 500px — 2 колонки</span>
+    <span class="bp bp2">≥ 750px — 3 рівні колонки</span>
+    <span class="bp bp3">≥ 950px — nav | main | aside</span>
+    <span class="bp bp4">≥ 1200px — фіксована ширина</span>
+  </div>
+</body>
+</html>
