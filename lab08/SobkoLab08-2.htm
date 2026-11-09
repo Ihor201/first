@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторна робота №8 — Завдання 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      color: #212121;
+      margin: 20px 60px;
+    }
+
+    h2 {
+      font-family: 'Times New Roman', serif;
+      font-size: 22pt;
+      font-weight: bold;
+      color: #1b5e20;
+      text-align: center;
+      text-transform: uppercase;
+      border-bottom: 3px solid #1b5e20;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      font-family: Arial, sans-serif;
+      font-size: 14pt;
+      font-weight: bold;
+      color: #2e7d32;
+      text-transform: capitalize;
+      margin-top: 24px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-family: 'Times New Roman', serif;
+      font-size: 12pt;
+      font-style: italic;
+      color: #333;
+      text-align: justify;
+      text-indent: 30px;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    div {
+      font-family: Verdana, sans-serif;
+      font-size: 11pt;
+      color: #1a237e;
+      background-color: #e8eaf6;
+      text-align: left;
+      text-indent: 20px;
+      margin-left: 3%;
+      margin-right: 3%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-left: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-width: medium;
+      border-color: #3949ab;
+      border-style: solid;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #1565c0;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: #6a1b9a;
+    }
+
+    a:hover {
+      color: #e53935;
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style-type: square;
+      color: #2e7d32;
+      margin-left: 30px;
+    }
+
+    ol {
+      list-style-type: upper-roman;
+      color: #1a237e;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Лабораторна робота №8 — Завдання 2: Глобальні таблиці стилів</h2>
+
+  <h3>Розділ 1: Мови розмітки</h3>
+
+  <p>
+    HTML розшифровується як HyperText Markup Language і є основою будь-якої
+    веб-сторінки. За допомогою тегів описують що де знаходиться на сторінці —
+    заголовки, абзаци, картинки, таблиці. Браузер зчитує ці теги
+    і відображає сторінку у зрозумілому вигляді.
+  </p>
+
+  <p>
+    HTML не є мовою програмування — він лише описує структуру.
+    Щоб сторінка виглядала гарно потрібен ще й CSS.
+    А щоб вона реагувала на дії — підключають JavaScript.
+    Разом ці три технології дають повноцінну веб-сторінку.
+  </p>
+
+  <div>
+    <strong>Версії HTML по роках:</strong><br>
+    HTML 1.0 (1991) — HTML 2.0 (1995) — HTML 3.2 (1997) —
+    HTML 4.01 (1999) — HTML5 (2014) — зараз підтримується як Living Standard організацією WHATWG.
+  </div>
+
+  <h3>Розділ 2: Каскадні таблиці стилів</h3>
+
+  <p>
+    CSS (Cascading Style Sheets) — це мова для оформлення HTML-документів.
+    Завдяки їй можна задавати кольори, шрифти, розміри і розташування елементів.
+    Слово «каскадні» означає що стилі можуть накладатись один на одного
+    з певними пріоритетами.
+  </p>
+
+  <p>
+    Є три способи підключити CSS до сторінки: прямо в тегу через атрибут style,
+    у блоці &lt;style&gt; в шапці документа, або в окремому файлі через &lt;link&gt;.
+    Третій спосіб найзручніший коли стиль треба застосувати до багатьох сторінок одразу.
+  </p>
+
+  <div>
+    Переваги CSS: відокремлює зовнішній вигляд від змісту, зменшує дублювання коду,
+    дозволяє змінити дизайн усього сайту редагуванням одного файлу.
+  </div>
+
+  <h3>Розділ 3: Корисні ресурси</h3>
+
+  <p>
+    Для вивчення HTML і CSS найкраще підходить MDN — документація від Mozilla.
+    Там все написано зрозуміло і є приклади. Також популярний W3Schools —
+    там можна відразу тестувати код у браузері.
+  </p>
+
+  <div>
+    Посилання:<br>
+    <a href="https://developer.mozilla.org">MDN Web Docs</a><br>
+    <a href="https://www.w3schools.com">W3Schools</a><br>
+    <a href="https://css-tricks.com">CSS-Tricks</a>
+  </div>
+
+  <h3>Розділ 4: Маркований список</h3>
+
+  <p>
+    Ось основні інструменти які потрібні веб-розробнику на початку роботи:
+  </p>
+
+  <ul>
+    <li>Текстовий редактор — VS Code або Sublime Text</li>
+    <li>Браузер з DevTools — Chrome або Firefox</li>
+    <li>Git для збереження версій коду</li>
+    <li>npm або yarn для управління пакетами</li>
+  </ul>
+
+  <h3>Розділ 5: Нумерований список</h3>
+
+  <ol>
+    <li>Вивчення HTML — розмітка і структура сторінок</li>
+    <li>Вивчення CSS — стилі і зовнішній вигляд</li>
+    <li>Вивчення JavaScript — інтерактивність</li>
+    <li>Фреймворки — React, Vue або Angular</li>
+  </ol>
+
+</body>
+</html>
