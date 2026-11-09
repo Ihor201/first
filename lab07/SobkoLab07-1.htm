@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторна робота №7 — Завдання 1</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f4f8; margin: 0; padding: 20px; }
+    .container { max-width: 650px; margin: 0 auto; background: white;
+                 border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    h2 { color: #1565c0; border-bottom: 2px solid #1565c0; padding-bottom: 8px; }
+    pre { font-family: Arial, sans-serif; white-space: pre-wrap; }
+    label { display: block; margin-top: 10px; font-weight: bold; color: #333; }
+    input[type="text"], textarea, select {
+      width: 100%; padding: 6px; margin-top: 4px; box-sizing: border-box;
+      border: 1px solid #bbb; border-radius: 4px; font-size: 14px;
+    }
+    .radio-group, .check-group { margin-top: 6px; }
+    .radio-group label, .check-group label { font-weight: normal; display: inline; margin-left: 6px; }
+    .btn-row { margin-top: 18px; }
+    input[type="submit"], input[type="reset"], input[type="file"] { margin-right: 10px; }
+    input[type="submit"] { background: #1565c0; color: white; border: none;
+                           padding: 8px 20px; border-radius: 4px; cursor: pointer; }
+    input[type="reset"]  { background: #e53935; color: white; border: none;
+                           padding: 8px 20px; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Лабораторна робота №7 — Завдання 1: Анкета студента</h2>
+
+  <form action="thank_you.htm" method="get" target="_blank">
+    <pre>
+<label>Ваше ім'я:</label>
+<input name="name" type="text" maxlength="40" size="40" value="">
+
+<label>Ваша стать:</label>
+<span class="radio-group">
+  <input type="radio" name="pol" value="male"> <label>Чоловіча</label>
+  <input type="radio" name="pol" value="female"> <label>Жіноча</label>
+</span>
+
+<label>На якому курсі Ви навчаєтесь?</label>
+<select name="curs" size="1">
+  <option value="1" selected>Перший</option>
+  <option value="2">Другий</option>
+  <option value="3">Третій</option>
+  <option value="4">Четвертий</option>
+  <option value="5">П'ятий</option>
+</select>
+
+<label>Які дисципліни ви вивчаєте на курсі?</label>
+<span class="check-group">
+  <input type="checkbox" name="web"       value="yes" checked> WEB-програмування<br>
+  <input type="checkbox" name="eldinam"   value="yes">         Теорія телекомунікацій<br>
+  <input type="checkbox" name="math"      value="yes">         Вища математика<br>
+  <input type="checkbox" name="db"        value="yes">         Бази даних<br>
+  <input type="checkbox" name="network"   value="yes">         Комп'ютерні мережі
+</span>
+
+<label>Напишіть декілька слів про себе:</label>
+    </pre>
+    <textarea name="about" rows="6" cols="60" wrap="off"></textarea>
+
+    <div class="btn-row">
+      <label>Прикріпити файл:</label>
+      <input type="file" name="friend" size="40" accept="*/*"><br><br>
+      <input type="submit" value="Відіслати дані">
+      <input type="reset"  value="Очистити форму">
+    </div>
+  </form>
+</div>
+</body>
+</html>

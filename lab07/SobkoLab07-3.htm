@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторна робота №7 — Завдання 3</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #e8eaf6; margin: 0; padding: 20px; }
+    .container { max-width: 680px; margin: 0 auto; background: white;
+                 border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.12); }
+    h2  { color: #283593; border-bottom: 2px solid #283593; padding-bottom: 8px; }
+    .form-title { text-align:center; font-size:1.2em; color:#283593;
+                  font-weight:bold; margin-bottom:20px; letter-spacing:1px; }
+    table { width: 100%; border-collapse: collapse; }
+    td { padding: 8px 10px; vertical-align: top; }
+    td:first-child { width: 45%; font-weight: bold; color: #333; padding-top: 12px; }
+    input[type="text"], select, textarea {
+      width: 100%; padding: 6px; border: 1px solid #9fa8da;
+      border-radius: 4px; font-size: 14px; box-sizing: border-box;
+    }
+    .radio-line, .check-line { margin-top: 4px; }
+    .radio-line label, .check-line label { font-weight:normal; margin-left:4px; }
+    input[type="submit"] { background:#283593; color:white; border:none;
+                           padding:9px 24px; border-radius:4px; cursor:pointer; font-size:14px; }
+    input[type="reset"]  { background:#c62828; color:white; border:none;
+                           padding:9px 24px; border-radius:4px; cursor:pointer; font-size:14px; margin-right:10px; }
+    .btn-row { text-align:center; margin-top:20px; }
+    .divider { border: none; border-top: 1px dashed #9fa8da; margin: 10px 0; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Лабораторна робота №7 — Завдання 3: Анкета</h2>
+  <div class="form-title">— АНКЕТА СТУДЕНТА —</div>
+
+  <form action="thank_you.htm" method="get" target="_blank">
+    <table>
+      <tr>
+        <td>Прізвище, ім'я, по батькові:</td>
+        <td><input type="text" name="fio" maxlength="80" placeholder="Іванченко Іван Іванович"></td>
+      </tr>
+      <tr><td colspan="2"><hr class="divider"></td></tr>
+
+      <tr>
+        <td>Вік:</td>
+        <td><input type="text" name="age" maxlength="3" size="5" placeholder="20"></td>
+      </tr>
+      <tr><td colspan="2"><hr class="divider"></td></tr>
+
+      <tr>
+        <td>Місто проживання:</td>
+        <td><input type="text" name="city" maxlength="50" placeholder="м. Черкаси"></td>
+      </tr>
+      <tr><td colspan="2"><hr class="divider"></td></tr>
+
+      <tr>
+        <td>Стать:</td>
+        <td>
+          <div class="radio-line">
+            <input type="radio" name="gender" value="m" checked id="gm">
+            <label for="gm">Чоловіча</label>
+          </div>
+          <div class="radio-line">
+            <input type="radio" name="gender" value="f" id="gf">
+            <label for="gf">Жіноча</label>
+          </div>
+        </td>
+      </tr>
+      <tr><td colspan="2"><hr class="divider"></td></tr>
+
+      <tr>
+        <td>Курс навчання:</td>
+        <td>
+          <select name="course" size="1">
+            <option value="1" selected>1 курс</option>
+            <option value="2">2 курс</option>
+            <option value="3">3 курс</option>
+            <option value="4">4 курс</option>
+            <option value="5">5 курс</option>
+          </select>
+        </td>
+      </tr>
+      <tr><td colspan="2"><hr class="divider"></td></tr>
+
+      <tr>
+        <td>Факультет:</td>
+        <td>
+          <select name="faculty" size="1">
+            <option value="1" selected>Інженерно-технологічний</option>
+            <option value="2">Економічний</option>
+            <option value="3">Юридичний</option>
+            <option value="4">Педагогічний</option>
+          </select>
+        </td>
+      </tr>
+      <tr><td colspan="2"><hr class="divider"></td></tr>
+
+      <tr>
+        <td>Захоплення (хобі):</td>
+        <td>
+          <div class="check-line"><input type="checkbox" name="hobby" value="sport" id="h1"><label for="h1"> Спорт</label></div>
+          <div class="check-line"><input type="checkbox" name="hobby" value="music" id="h2" checked><label for="h2"> Музика</label></div>
+          <div class="check-line"><input type="checkbox" name="hobby" value="travel" id="h3"><label for="h3"> Подорожі</label></div>
+          <div class="check-line"><input type="checkbox" name="hobby" value="it" id="h4" checked><label for="h4"> Програмування</label></div>
+          <div class="check-line"><input type="checkbox" name="hobby" value="read" id="h5"><label for="h5"> Читання</label></div>
+        </td>
+      </tr>
+      <tr><td colspan="2"><hr class="divider"></td></tr>
+
+      <tr>
+        <td>Оцінка знань з веб-програмування:</td>
+        <td>
+          <div class="radio-line"><input type="radio" name="webskill" value="1" id="s1"><label for="s1"> Новачок (не знаю нічого)</label></div>
+          <div class="radio-line"><input type="radio" name="webskill" value="2" id="s2" checked><label for="s2"> Базовий (HTML/CSS)</label></div>
+          <div class="radio-line"><input type="radio" name="webskill" value="3" id="s3"><label for="s3"> Середній (+ JavaScript)</label></div>
+          <div class="radio-line"><input type="radio" name="webskill" value="4" id="s4"><label for="s4"> Просунутий</label></div>
+        </td>
+      </tr>
+      <tr><td colspan="2"><hr class="divider"></td></tr>
+
+      <tr>
+        <td>Розкажіть про себе:</td>
+        <td><textarea name="about" rows="5" cols="40" placeholder="Кілька слів про себе, мету навчання..."></textarea></td>
+      </tr>
+    </table>
+
+    <div class="btn-row">
+      <input type="reset"  value="Очистити форму">
+      <input type="submit" value="Відправити анкету">
+    </div>
+  </form>
+</div>
+</body>
+</html>
