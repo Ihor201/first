@@ -1,0 +1,180 @@
+/* =============================================
+   Файл стилів: styles.css
+   Автор: Собко Ігор Олександрович, гр. 301-ТН
+   ============================================= */
+
+/* Загальні стилі body */
+body {
+  background-image: url('img/bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #e8f0fe; /* запасний колір */
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;      /* стиль тексту - курсив */
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  color: #212121;
+}
+
+/* Навігаційна панель */
+nav {
+  background-color: rgba(21, 101, 192, 0.92);
+  padding: 12px 0;
+  text-align: center;
+  font-style: normal;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+nav a {
+  color: #ffffff !important;
+  margin: 0 20px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+nav a:hover {
+  color: #ffcc00 !important;
+  text-decoration: underline !important;
+}
+
+/* Контейнер сторінки */
+.container {
+  max-width: 920px;
+  margin: 24px auto;
+  background-color: rgba(255, 255, 255, 0.90);
+  padding: 24px 36px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+
+/* Заголовок 1-го рівня:
+   жирний, по центру, заданий колір, нормальний стиль */
+h1 {
+  font-weight: bold;
+  text-align: center;
+  color: #8b0000;      /* темно-червоний */
+  font-style: normal;
+  font-size: 26pt;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #8b0000;
+  padding-bottom: 8px;
+}
+
+/* Заголовок 2-го рівня */
+h2 {
+  font-weight: bold;
+  color: #1565c0;
+  font-style: normal;
+  font-size: 18pt;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+/* Заголовок 3-го рівня */
+h3 {
+  color: #2e7d32;
+  font-style: normal;
+  font-size: 14pt;
+}
+
+/* Абзаци:
+   - червоний рядок (відступ першого рядка)
+   - вирівнювання по ширині
+   - відстані ліворуч та праворуч */
+p {
+  text-align: justify;
+  text-indent: 25px;      /* червоний рядок */
+  margin-left: 2%;
+  margin-right: 2%;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+/* Рисунки: залежно від класу розташовуються по-різному */
+img {
+  display: block;
+  max-width: 100%;
+  margin: 10px auto;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+img.left {
+  float: left;
+  margin: 4px 16px 10px 0;
+  max-width: 280px;
+}
+
+img.right {
+  float: right;
+  margin: 4px 0 10px 16px;
+  max-width: 280px;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* =============================================
+   Стилі посилань
+   ============================================= */
+
+/* Не відвідане посилання */
+a:link {
+  color: #2e7d32;           /* зелений */
+  text-decoration: none;
+}
+
+/* Активне посилання */
+a:active {
+  color: #0000ff;           /* синій */
+  text-decoration: none;
+}
+
+/* Відвідане посилання */
+a:visited {
+  color: #1a237e;           /* темно-синій */
+  text-decoration: none;
+}
+
+/* Посилання при наведенні миші */
+a:hover {
+  color: #c62828;           /* червоний */
+  text-decoration: underline;
+}
+
+/* Список */
+ul, ol {
+  margin-left: 5%;
+  margin-right: 2%;
+  line-height: 1.8;
+}
+
+/* Код */
+code {
+  font-family: 'Courier New', monospace;
+  font-style: normal;
+  background: #f5f5f5;
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: #c62828;
+}
+
+/* Підвал */
+footer {
+  text-align: center;
+  font-style: normal;
+  font-size: 12px;
+  color: #666;
+  padding: 12px;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+}
