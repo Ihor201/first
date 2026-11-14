@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реєстрація</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #1565c0 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 32px 40px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+
+    h2 {
+      text-align: center;
+      color: #1565c0;
+      margin-bottom: 24px;
+      font-size: 22px;
+      border-bottom: 2px solid #1565c0;
+      padding-bottom: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid #bdbdbd;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    input:focus, select:focus {
+      border-color: #1565c0;
+      box-shadow: 0 0 0 2px rgba(21,101,192,0.15);
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 20px;
+      margin-top: 4px;
+    }
+
+    .radio-group label {
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    button[type="submit"] {
+      flex: 1;
+      background: #1565c0;
+      color: white;
+      border: none;
+      padding: 11px;
+      border-radius: 5px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button[type="submit"]:hover { background: #0d47a1; }
+
+    button[type="reset"] {
+      flex: 0 0 auto;
+      background: #e53935;
+      color: white;
+      border: none;
+      padding: 11px 20px;
+      border-radius: 5px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button[type="reset"]:hover { background: #c62828; }
+
+    .login-link {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .login-link a { color: #1565c0; }
+
+    .back-link {
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    .back-link a {
+      color: rgba(255,255,255,0.8);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .back-link a:hover { color: #fff; text-decoration: underline; }
+
+    .required { color: #e53935; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Реєстрація</h2>
+
+    <form action="#" method="post">
+
+      <div class="form-group">
+        <label for="surname">Прізвище <span class="required">*</span></label>
+        <input type="text" id="surname" name="surname"
+               placeholder="Введіть прізвище" maxlength="50" required>
+      </div>
+
+      <div class="form-group">
+        <label for="firstname">Ім'я <span class="required">*</span></label>
+        <input type="text" id="firstname" name="firstname"
+               placeholder="Введіть ім'я" maxlength="50" required>
+      </div>
+
+      <div class="form-group">
+        <label for="patronymic">По батькові</label>
+        <input type="text" id="patronymic" name="patronymic"
+               placeholder="Введіть по батькові" maxlength="50">
+      </div>
+
+      <div class="form-group">
+        <label for="login">Логін <span class="required">*</span></label>
+        <input type="text" id="login" name="login"
+               placeholder="Введіть логін" maxlength="30" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Пароль <span class="required">*</span></label>
+        <input type="password" id="password" name="password"
+               placeholder="Введіть пароль" maxlength="50" required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm">Підтвердження паролю <span class="required">*</span></label>
+        <input type="password" id="confirm" name="confirm"
+               placeholder="Повторіть пароль" maxlength="50" required>
+      </div>
+
+      <div class="form-group">
+        <label for="birthdate">Дата народження</label>
+        <input type="date" id="birthdate" name="birthdate">
+      </div>
+
+      <div class="form-group">
+        <label>Стать</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="gender" value="male" checked>
+            Чоловіча
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female">
+            Жіноча
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Телефон</label>
+        <input type="tel" id="phone" name="phone"
+               placeholder="+38 (0XX) XXX-XX-XX" maxlength="20">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="email"
+               placeholder="example@email.com" required>
+      </div>
+
+      <div class="btn-row">
+        <button type="submit">Зареєструватись</button>
+        <button type="reset">Очистити</button>
+      </div>
+
+    </form>
+
+    <div class="login-link">
+      Вже є акаунт? <a href="#">Увійти</a>
+    </div>
+
+  </div>
+
+  <div class="back-link">
+    <a href="SobkoLab10-1.htm">&larr; Повернутись на головну (ЛЗ 1.10)</a>
+  </div>
+
+</body>
+</html>

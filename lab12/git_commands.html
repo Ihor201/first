@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Команди Git</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #f0f6fc;
+      text-decoration: none;
+    }
+
+    .logo span { color: #f78166; }
+
+    header nav { margin-left: auto; display: flex; gap: 20px; }
+    header nav a {
+      color: #8b949e;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    header nav a:hover { color: #f0f6fc; }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 30px 20px 60px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #f0f6fc;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #8b949e;
+      font-size: 15px;
+      margin-bottom: 36px;
+    }
+
+    .section {
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: #58a6ff;
+      border-bottom: 1px solid #21262d;
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h2::before {
+      content: '▸';
+      color: #3fb950;
+      font-size: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    thead th {
+      background: #161b22;
+      color: #8b949e;
+      text-align: left;
+      padding: 8px 14px;
+      border: 1px solid #21262d;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    tbody tr:nth-child(even) { background: #0d1117; }
+    tbody tr:nth-child(odd)  { background: #161b22; }
+    tbody tr:hover { background: #21262d; }
+
+    td {
+      padding: 9px 14px;
+      border: 1px solid #21262d;
+      vertical-align: top;
+    }
+
+    td:first-child {
+      font-family: 'Courier New', monospace;
+      color: #79c0ff;
+      white-space: nowrap;
+      width: 42%;
+    }
+
+    td:last-child { color: #c9d1d9; }
+
+    code {
+      font-family: 'Courier New', monospace;
+      background: #21262d;
+      color: #79c0ff;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    footer {
+      text-align: center;
+      color: #8b949e;
+      font-size: 12px;
+      padding: 20px;
+      border-top: 1px solid #21262d;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#">&lt;<span>Git</span>/&gt;</a>
+  <nav>
+    <a href="register.html">Реєстрація</a>
+    <a href="SobkoLab10-1.htm">ЛЗ 1.10</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Довідник команд Git</h1>
+  <p class="subtitle">Основні команди системи контролю версій Git | Лаб. робота №12 | Собко І.О.</p>
+
+  <div class="section">
+    <h2>Налаштування Git</h2>
+    <table>
+      <thead><tr><th>Команда</th><th>Опис</th></tr></thead>
+      <tbody>
+        <tr><td>git config --global user.name "Name"</td><td>Встановити ім'я користувача</td></tr>
+        <tr><td>git config --global user.email "email"</td><td>Встановити email користувача</td></tr>
+        <tr><td>git config --list</td><td>Переглянути всі налаштування</td></tr>
+        <tr><td>git config --global core.editor "code"</td><td>Встановити редактор за замовчуванням</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Ініціалізація та клонування</h2>
+    <table>
+      <thead><tr><th>Команда</th><th>Опис</th></tr></thead>
+      <tbody>
+        <tr><td>git init</td><td>Ініціалізувати новий репозиторій у поточній папці</td></tr>
+        <tr><td>git clone &lt;url&gt;</td><td>Клонувати репозиторій за URL</td></tr>
+        <tr><td>git clone &lt;url&gt; &lt;dir&gt;</td><td>Клонувати у конкретну папку</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Базові команди (знімки / commits)</h2>
+    <table>
+      <thead><tr><th>Команда</th><th>Опис</th></tr></thead>
+      <tbody>
+        <tr><td>git status</td><td>Показати стан робочого каталогу</td></tr>
+        <tr><td>git add &lt;file&gt;</td><td>Додати файл до індексу (staging area)</td></tr>
+        <tr><td>git add .</td><td>Додати всі змінені файли до індексу</td></tr>
+        <tr><td>git commit -m "message"</td><td>Зберегти зміни з повідомленням</td></tr>
+        <tr><td>git commit -am "message"</td><td>Додати всі відстежувані файли та зробити коміт</td></tr>
+        <tr><td>git diff</td><td>Показати незіндексовані зміни</td></tr>
+        <tr><td>git diff --staged</td><td>Показати зіндексовані (staged) зміни</td></tr>
+        <tr><td>git rm &lt;file&gt;</td><td>Видалити файл з репозиторію та диску</td></tr>
+        <tr><td>git mv &lt;old&gt; &lt;new&gt;</td><td>Перейменувати або перемістити файл</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Гілки (Branches)</h2>
+    <table>
+      <thead><tr><th>Команда</th><th>Опис</th></tr></thead>
+      <tbody>
+        <tr><td>git branch</td><td>Показати всі локальні гілки</td></tr>
+        <tr><td>git branch -a</td><td>Показати всі гілки (локальні + віддалені)</td></tr>
+        <tr><td>git branch &lt;name&gt;</td><td>Створити нову гілку</td></tr>
+        <tr><td>git checkout &lt;name&gt;</td><td>Переключитись на гілку</td></tr>
+        <tr><td>git checkout -b &lt;name&gt;</td><td>Створити та переключитись на нову гілку</td></tr>
+        <tr><td>git switch &lt;name&gt;</td><td>Переключитись на гілку (сучасний спосіб)</td></tr>
+        <tr><td>git switch -c &lt;name&gt;</td><td>Створити та переключитись (сучасний спосіб)</td></tr>
+        <tr><td>git merge &lt;branch&gt;</td><td>Злити гілку у поточну</td></tr>
+        <tr><td>git branch -d &lt;name&gt;</td><td>Видалити гілку (після злиття)</td></tr>
+        <tr><td>git branch -D &lt;name&gt;</td><td>Видалити гілку примусово</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Робота з віддаленим репозиторієм</h2>
+    <table>
+      <thead><tr><th>Команда</th><th>Опис</th></tr></thead>
+      <tbody>
+        <tr><td>git remote -v</td><td>Показати підключені віддалені репозиторії</td></tr>
+        <tr><td>git remote add origin &lt;url&gt;</td><td>Підключити віддалений репозиторій</td></tr>
+        <tr><td>git push origin &lt;branch&gt;</td><td>Відправити зміни на сервер</td></tr>
+        <tr><td>git push -u origin &lt;branch&gt;</td><td>Відправити та встановити upstream</td></tr>
+        <tr><td>git pull</td><td>Завантажити та злити зміни з сервера</td></tr>
+        <tr><td>git fetch</td><td>Завантажити зміни без злиття</td></tr>
+        <tr><td>git push --all</td><td>Відправити всі гілки на сервер</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Перегляд історії</h2>
+    <table>
+      <thead><tr><th>Команда</th><th>Опис</th></tr></thead>
+      <tbody>
+        <tr><td>git log</td><td>Показати журнал комітів</td></tr>
+        <tr><td>git log --oneline</td><td>Коротка форма журналу (1 рядок = 1 коміт)</td></tr>
+        <tr><td>git log --graph --all</td><td>Граф гілок у консолі</td></tr>
+        <tr><td>git show &lt;hash&gt;</td><td>Показати деталі конкретного коміту</td></tr>
+        <tr><td>git blame &lt;file&gt;</td><td>Хто і коли змінював кожен рядок файлу</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Скасування та відновлення</h2>
+    <table>
+      <thead><tr><th>Команда</th><th>Опис</th></tr></thead>
+      <tbody>
+        <tr><td>git restore &lt;file&gt;</td><td>Скасувати зміни у файлі (не зіндексовані)</td></tr>
+        <tr><td>git restore --staged &lt;file&gt;</td><td>Прибрати файл зі staged area</td></tr>
+        <tr><td>git revert &lt;hash&gt;</td><td>Скасувати коміт новим комітом (безпечно)</td></tr>
+        <tr><td>git reset --soft HEAD~1</td><td>Відмінити останній коміт, зберегти зміни</td></tr>
+        <tr><td>git reset --hard HEAD~1</td><td>Відмінити останній коміт і зміни (обережно!)</td></tr>
+        <tr><td>git stash</td><td>Тимчасово зберегти незакінчені зміни</td></tr>
+        <tr><td>git stash pop</td><td>Відновити збережені зміни</td></tr>
+        <tr><td>git stash list</td><td>Показати список збережених станів</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<footer>
+  Лабораторна робота №12 | Собко Ігор Олександрович, гр. 301-ТН | &copy; 2026
+</footer>
+
+</body>
+</html>
